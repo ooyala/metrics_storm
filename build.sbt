@@ -4,6 +4,12 @@ name := "metrics_storm"
 // $(NEXT_VERSION)-SNAPSHOT afterwards!
 version := "0.0.7-SNAPSHOT"
 
+scalaVersion := "2.9.1"
+
+unmanagedSourceDirectories in Compile <++= Seq(baseDirectory(_ / "src" )).join
+
+unmanagedSourceDirectories in Test <++= Seq(baseDirectory(_ / "test" )).join
+
 libraryDependencies ++= Seq(
   // slf4j >= 1.6 is needed so jetty logging won't throw an exception
   "org.slf4j" % "slf4j-api" % "1.6.4",
@@ -13,9 +19,9 @@ libraryDependencies ++= Seq(
   "javax.servlet" % "servlet-api" % "2.5"
 )
 
-libraryDependencies in Test ++= Seq(
-  "org.scalatest" %% "scalatest" % "1.8" % "test"
-)
+// Testing deps
+libraryDependencies ++= Seq("org.scalatest" %% "scalatest" % "1.9.1" % "test",
+                            "org.mockito" % "mockito-all" % "1.9.0" % "test")
 
 resolvers ++= Seq("clojars" at "http://clojars.org/repo/",
                   "clojure-releases" at "http://build.clojure.org/releases")
