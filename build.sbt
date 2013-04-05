@@ -26,7 +26,7 @@ libraryDependencies ++= Seq("org.scalatest" %% "scalatest" % "1.9.1" % "test",
 resolvers ++= Seq("clojars" at "http://clojars.org/repo/",
                   "clojure-releases" at "http://build.clojure.org/releases")
 
-libraryDependencies += "storm" % "storm" % "0.8.1"
+libraryDependencies += "storm" % "storm" % "0.8.2"
 
 // Testing deps
 libraryDependencies ++= Seq()
