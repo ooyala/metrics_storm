@@ -6,6 +6,8 @@ version := "0.0.7-SNAPSHOT"
 
 scalaVersion := "2.9.1"
 
+scalacOptions += "-Yresolve-term-conflict:package"
+
 unmanagedSourceDirectories in Compile <++= Seq(baseDirectory(_ / "src" )).join
 
 unmanagedSourceDirectories in Test <++= Seq(baseDirectory(_ / "test" )).join
